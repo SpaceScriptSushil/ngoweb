@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   const navigation = [
-    { name: 'Home', href: '/' },
+    { name: 'Homeeeeee', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Mission', href: '/mission' },
     { name: 'Vision', href: '/vision' },
@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link to="/" className={`text-2xl font-bold transition duration-150 ${isTransparent ? 'text-white' : 'text-gray-800 hover:text-primary-600'} font-extrabold`}>Script Space</Link>
+              <Link to="/" className={`text-2xl font-bold transition duration-150 ${isTransparent ? 'text-white' : 'text-gray-800 hover:text-primary-600'} font-extrabold`}>Mansi Space</Link>
             </div>
           </div>
           {/* Desktop Navigation */}
