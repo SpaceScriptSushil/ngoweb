@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   const navigation = [
-    { name: 'Homeeeeee', href: '/' },
+    { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Mission', href: '/mission' },
     { name: 'Vision', href: '/vision' },
