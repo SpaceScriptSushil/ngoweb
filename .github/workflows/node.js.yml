@@ -13,16 +13,6 @@ jobs:
         node-version: [22.x]
 
     steps:
-    - name: Increase swap memory
-      run: |
-        sudo fallocate -l 1G /swapfile
-        sudo chmod 600 /swapfile
-        sudo mkswap /swapfile
-        sudo swapon /swapfile
-        sudo swapon --show
-        free -h
-
-    - uses: actions/checkout@v4
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
