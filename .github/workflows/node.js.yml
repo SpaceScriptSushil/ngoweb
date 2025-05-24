@@ -19,7 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    - run: NODE_OPTIONS="--max-old-space-size=512" npm ci 
+    - run: NODE_OPTIONS="--max-old-space-size=512" npm i 
 
 
     - name: Build with limited memory
