@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Deploy Next.js on EC2
 
 on:
   push:
@@ -6,22 +6,26 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted  # Change this to self-hosted EC2 runner label
+    runs-on: self-hosted
 
     strategy:
       matrix:
         node-version: [22.x]
 
     steps:
+    - uses: actions/checkout@v4
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    - run: NODE_OPTIONS="--max-old-space-size=512" npm i 
 
+    - name: Install dependencies
+      run: |
+        export NODE_OPTIONS=--max_old_space_size=512
+        npm ci
 
-    - name: Build with limited memory
-      run: NODE_OPTIONS="--max-old-space-size=512" npm run build --if-present
-
+    - name: Build Next.js app
+      run: npm run build
